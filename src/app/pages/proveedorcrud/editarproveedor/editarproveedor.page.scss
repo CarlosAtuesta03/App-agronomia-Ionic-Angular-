@@ -1,0 +1,41 @@
+.izquierdo {
+    // text-align: center;
+    text-decoration: none;
+    padding: 5px; //grosor del boton
+    padding-left: 140px;
+    padding-right: 140px; //155
+    font-family: "Lato", serif;
+    font-weight: 150;
+    font-size: 18px;
+    // font-style: italic;
+    color: #000000;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    border: 3px double #4ed354;
+}
+
+.contenido {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lato", serif;
+    font-size: 2em;
+    color: #75d67a;
+}
+
+ion-content.background {
+    --background: url(https://blog.foto24.com/wp-content/uploads/2019/02/4-684x1024.jpg) 0 0/100% 100% no-repeat;
+    //  --background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/wheat-stalk-jelly-starnes.jpg) 0 0/100% 100% no-repeat;
+}
+
+.boton {
+    --background: #16d863;
+}
+
+ion-card {
+    --background: rgba(233, 233, 233, 0);
+    margin: 1px;
+}
+
+.hijo {
+    line-height: 600px; //Damos 200px de alto para notar el efecto
+}

@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Editar operacion
+    </div>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <ion-card *ngFor="let o of operacion">
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" [value]="o.ope_nombre" #ope_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Tiempo</ion-label>
+                <ion-input type="text" [value]="o.ope_tiempo" #ope_tiempo required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fecha</ion-label>
+                <ion-input type="text" [value]="o.ope_fecha" #ope_fecha required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fin</ion-label>
+                <ion-input type="text" [value]="o.ope_fin" #ope_fin clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Cultivo al que pertenece</ion-label>
+                <ion-input type="text" [value]="o.ope_cul_id" #ope_cul_id clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="Editar( ope_nombre,ope_tiempo,ope_fecha,ope_fin,ope_cul_id)" expand="block">
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="regresar(o.ope_cul_id)">
+                  Regresar
+              </a>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

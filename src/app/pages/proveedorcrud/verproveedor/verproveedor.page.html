@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro"></ion-title>
+        </ion-buttons>
+        <ion-col>
+            <ion-button color="default" [routerLink]="['/menu/menu/crearfinca']" style="float: right;">
+                <ion-icon color="secondary" name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-content class="background">
+
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+            </ion-refresher-content>
+        </ion-refresher>
+        <div class="contenido">
+            Proveedor
+        </div>
+        <ion-card *ngFor="let p of proveedores; let i=index">
+            <ion-item class="ion-activated">
+                <ion-col size="2">
+                    <ion-button color="default" (click)="editar(p.pro_nit)">
+                        <ion-icon color="secondary" name="create-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button color="default" (click)="eliminar(p.pro_nit)">
+                        <ion-icon color="secondary" name="trash-bin-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <!--    <ion-col>
+
+                  <a class="boton_1" (click)="lotes(f.fin_id)">
+                    Ver lotes
+                </a>
+              </ion-col>-->
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>
+                    Nit
+                    <div class="contenido2">{{p.pro_nit }}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated">
+                <ion-label>Razón social
+                    <div class="contenido2">{{p.pro_razonsocial }}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Email
+                    <div class="contenido2">{{p.pro_email}}</div>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+        <br>
+        <br>
+        <a class="izquierdo" [routerLink]="['/menu/menu/proveedor']">
+          Regresar
+      </a>
+        <br>
+        <br>
+
+
+    </ion-content>

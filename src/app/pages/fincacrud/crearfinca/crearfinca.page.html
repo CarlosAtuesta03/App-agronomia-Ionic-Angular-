@@ -1,0 +1,71 @@
+<!--
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro">Crear Finca</ion-title>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>-->
+
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Crear Finca
+    </div>
+</ion-header>
+<ion-content class="background">
+    <br>
+
+    <ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" #fin_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Area</ion-label>
+                <ion-input type="text" #fin_area required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Descripcion</ion-label>
+                <ion-input type="text" #fin_descripcion required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Administrador</ion-label>
+                <ion-input type="text" #fin_adm_cedula required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(fin_nombre,fin_area,fin_descripcion,fin_adm_cedula)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <ion-back-button defaultHref="/menu/menu/finca" text="Regresar" lot="start" mode="ios" color="⚠" class="izquierdo"></ion-back-button>
+</ion-content>

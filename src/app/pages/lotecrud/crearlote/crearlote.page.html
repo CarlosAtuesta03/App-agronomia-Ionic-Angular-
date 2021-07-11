@@ -1,0 +1,60 @@
+<ion-header>
+    <div class="contenido">
+        Crear Lote
+    </div>
+</ion-header>
+
+<ion-content class="background">
+    <br>
+    <ion-card>
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Area</ion-label>
+                <ion-input type="text" #lot_area required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Descripcion </ion-label>
+                <ion-input type="text" #lot_descripcion required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Finca a la que pertenece</ion-label>
+                <ion-input type="text" #lot_fin_id required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(lot_area,lot_descripcion,lot_fin_id)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="closeModal()">
+                    Regresar
+                </a>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

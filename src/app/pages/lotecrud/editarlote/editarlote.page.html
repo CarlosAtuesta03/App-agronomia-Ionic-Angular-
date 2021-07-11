@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Editar Lote
+    </div>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <ion-card *ngFor="let l of Lotes">
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Identificador</ion-label>
+                <ion-input type="text" [value]="l.lot_id " #lot_id required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Area</ion-label>
+                <ion-input type="text" [value]="l.lot_area " #lot_area required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Descripcion </ion-label>
+                <ion-input type="text" [value]="l.lot_descripcion " #lot_descripcion required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Finca</ion-label>
+                <ion-input type="text" [value]="l.lot_fin_id " #lot_fin_id clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="Editar( lot_id,lot_area,lot_descripcion,lot_fin_id)" expand="block">
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="regresar(l.lot_fin_id)">
+                    Regresar
+                </a>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

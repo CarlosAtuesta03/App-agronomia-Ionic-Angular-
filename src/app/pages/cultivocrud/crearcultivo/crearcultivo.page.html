@@ -1,0 +1,71 @@
+<ion-header>
+    <div class="contenido">
+        Crear cultivo
+    </div>
+</ion-header>
+
+<ion-content class="background">
+    <br>
+    <ion-card>
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" #cul_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Inicio</ion-label>
+                <ion-input type="text" #cul_inicio required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fin</ion-label>
+                <ion-input type="text" #cul_fin required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Cantidad</ion-label>
+                <ion-input type="text" #cul_cantidad required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Lote al que pertenece</ion-label>
+                <ion-input type="text" #cul_lot_id required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Tipo de cultivo</ion-label>
+                <ion-input type="text" #cul_tip_id clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(cul_nombre,cul_inicio,cul_fin,cul_cantidad,cul_lot_id,cul_tip_id)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="closeModal()">
+                  Regresar
+              </a>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

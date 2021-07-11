@@ -1,0 +1,41 @@
+<ion-menu slot="start" menuId="first" contentId="main">
+    <ion-content class="background">
+        <!-- <ion-content class="ion-padding">-->
+
+
+        <div class="menu-header-bg"></div>
+
+        <div class="header-content">
+            <img src="{{photo}}" alt="">
+            <ion-label>
+                <h2>{{name}}</h2>
+                <h6>{{email}}</h6>
+
+            </ion-label>
+        </div>
+
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of rutaspages; let i=index">
+            <ion-item-divider routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" lines="none ">
+                <ion-icon slot="start" [ios]="p.icon +'-print'" [md]="p.icon +'-sharp'"></ion-icon>
+                <ion-label>
+                    <h5>{{p.title}}</h5>
+                </ion-label>
+            </ion-item-divider>
+        </ion-menu-toggle>
+
+        <div class="action-button ">
+            <div class="hijo ">
+                <ion-button class="boton2 " (click)="cerrar()">
+                    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+                    <!---->
+                    <ion-label>
+                        <h1>Cerrar sesión</h1>
+                    </ion-label>
+                </ion-button>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-menu>
+<router-outlet id="main "> </router-outlet>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Editar trabajador
+    </div>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <ion-card *ngFor="let t of trabajador">
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" [value]="t.tra_nombre" #tra_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Telefono</ion-label>
+                <ion-input type="text" [value]="t.tra_telefono" #tra_telefono required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Foto</ion-label>
+                <ion-input type="text" [value]="t.tra_foto" #tra_foto required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="Editar( tra_nombre,tra_telefono,tra_foto)" expand="block">
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ion-row>
+
+            <a class="izquierdo" [routerLink]="['/menu/menu/trabajadores']">
+                Regresar
+            </a>
+
+        </ion-row>
+    </ion-card>
+</ion-content>

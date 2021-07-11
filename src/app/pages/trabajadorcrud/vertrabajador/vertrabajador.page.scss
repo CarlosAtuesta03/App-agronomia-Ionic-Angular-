@@ -1,0 +1,92 @@
+ion-title {
+    text-align: center;
+    font-size: 200%;
+    // font-weight: bold;
+    font-family: italic;
+    color: rgb(10, 1, 1);
+}
+
+h1 {
+    font-size: 130%; //250
+    font-weight: bold;
+    font-family: Serif;
+    color: #ffffff;
+}
+
+.contenido {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lato", serif;
+    font-size: 2em;
+    color: black;
+}
+
+.contenido2 {
+    font-family: "Lato", serif;
+    font-size: 100%;
+    color: black;
+}
+
+.columna_izquierda {
+    float: left;
+    width: 100px;
+}
+
+ion-item-divider {
+    --background: rgba(233, 233, 233, 0);
+    margin: 1px;
+}
+
+ion-label {
+    font-weight: bold;
+    color: rgb(233, 229, 229);
+}
+
+//fondo
+//ion-content.background {
+//--background: url(https://i.pinimg.com/originals/11/8a/5f/118a5fd442b57a9ab755b92d06427516.jpg) 0 0/100% 100% no-repeat;
+//  --background: url(https://im.vsco.co/aws-us-west-2/c5161d/95659654/5f39e4d5ca8cde51652e29b3/5f39e4d5ca8cde51652e29b3.jpg?w=480) 0 0/100% 100% no-repeat;
+//}
+//fondo
+ion-content.background {
+    //  --background: url(https://www.xtrafondos.com/wallpapers/vertical/un-campo-471.jpg) 0 0/100% 100% no-repeat;
+    //  --background: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/wheat-stalk-jelly-starnes.jpg) 0 0/100% 100% no-repeat;
+    --background: url(../../../../assets/img/menu2.jpg) 0 0/100% 100% no-repeat;
+}
+
+.boton_1 {
+    // text-align: center;
+    text-decoration: none;
+    padding: 2px;
+    padding-left: 15px;
+    padding-right: 30px;
+    font-family: "Lato", serif;
+    font-weight: 150;
+    font-size: 14px;
+    // font-style: italic;
+    color: #000000;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    border: 3px double #4ed354;
+}
+
+.boton_1:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.izquierdo {
+    // text-align: center;
+    text-decoration: none;
+    padding: 5px; //grosor del boton
+    padding-left: 140px;
+    padding-right: 150px; //155
+    font-family: "Lato", serif;
+    font-weight: 150;
+    font-size: 18px;
+    // font-style: italic;
+    color: #000000;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    border: 3px double #4ed354;
+}

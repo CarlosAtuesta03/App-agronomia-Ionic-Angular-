@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro"></ion-title>
+        </ion-buttons>
+        <ion-col>
+            <ion-button color="default" [routerLink]="['crearproveedor']" style="float: right;">
+                <ion-icon color="secondary" name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <div class="contenido">
+        Proveedores
+    </div>
+
+    <ion-item *ngFor="let p of proveedores; let i=index">
+        <!--<ion-avatar slot="start">
+           <img src="{{t.tra_foto}}"
+        </ion-avatar>-->
+        <ion-label>{{p.pro_email}}</ion-label>
+        <ion-col size="2">
+            <ion-button color="default" (click)="ver(p.pro_nit)">
+                <ion-icon color="secondary" name="eye-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-item>
+
+</ion-content>

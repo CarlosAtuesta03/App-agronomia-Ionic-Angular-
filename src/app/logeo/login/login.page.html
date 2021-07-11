@@ -1,0 +1,94 @@
+<ion-header>
+
+    <ion-toolbar class="header">
+
+        <ion-title class="ion-text-center">
+            <h1>Iniciar sesión</h1>
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+    <br>
+    <!--<img class="icon" src="assets/icon/i4.png" alt="">-->
+    <br>
+    <!--Conten-->
+    <ion-card>
+        <form [formGroup]="login" (ngSubmit)="salvarFormulario()">
+
+            <ion-item button>
+                <ion-avatar slot="start">
+                    <img src="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643777-email-envelope-letter-mail-message_113436.png">
+                </ion-avatar>
+                <ion-label position="floating"> Email </ion-label>
+                <ion-input formControlName="direccion" type="text" name="direccion" #email required clearInput></ion-input>
+            </ion-item>
+
+            <ion-item *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+                <ion-label text-wrap color="danger" *ngIf="direccion.errors.pattern">
+                    No es un formato de direccion de correo valido
+                </ion-label>
+                <ion-label text-wrap color="danger" *ngIf="direccion.errors.required">
+                    El campo debe ser diligenciado
+                </ion-label>
+            </ion-item>
+
+            <ion-item button>
+                <ion-avatar slot="start">
+                    <img src="https://pics.freeicons.io/uploads/icons/png/1719662671537184109-512.png">
+                </ion-avatar>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input formControlName="codigo" type="password" name="codigo" #password required clearInput></ion-input>
+            </ion-item>
+
+            <ion-item *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)">
+                <ion-label text-wrap color="danger" *ngIf="codigo.errors.required">
+                    El campo debe ser diligenciado
+                </ion-label>
+
+                <ion-label text-wrap color="danger" *ngIf="codigo.errors.minlength">
+                    No cumple con la cantidad minima de caracteres
+                </ion-label>
+            </ion-item>
+
+            <ion-row>
+                <ion-col>
+                    <ion-button class="boton" type="submit" (click)="onLogin(email, password)" expand="block">Login</ion-button>
+                </ion-col>
+            </ion-row>
+
+        </form>
+    </ion-card>
+
+    <br>
+    <div class="padre ">
+        <ion-row>
+            <div class="hijo ">
+                <ion-col size="3 ">
+                    <ion-button class="google " (click)="onLoginGoogle() ">
+                        <ion-icon name="logo-google"></ion-icon>
+                        <ion-icon name=""></ion-icon>
+                        <h5>
+                            <ion-label>
+                                Google
+                            </ion-label>
+                        </h5>
+                    </ion-button>
+                </ion-col>
+            </div>
+        </ion-row>
+
+    </div>
+    <div class="ion-text-center ion-margin-top ">
+        <a routerLink="/forgot-password"><small>Olvidé mi Contraseña</small></a>
+    </div>
+    <div class="ion-text-center ion-margin-top ">
+        <a routerLink="/register"><small>Crea una cuenta</small></a>
+    </div>
+
+
+
+
+</ion-content>

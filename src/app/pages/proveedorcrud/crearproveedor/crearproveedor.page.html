@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro">Crear proveedor</ion-title>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <br>
+    <ion-card>
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Ni</ion-label>
+                <ion-input type="text" #pro_nit required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Razón social</ion-label>
+                <ion-input type="text" #pro_razonsocial required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Email</ion-label>
+                <ion-input type="text" #pro_email required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(pro_nit,pro_razonsocial,pro_email)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-back-button defaultHref="/menu/menu/proveedor" text="Regresar" lot="start" mode="ios" color="⚠" class="izquierdo"></ion-back-button>
+
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro"></ion-title>
+        </ion-buttons>
+        <ion-col>
+            <ion-button color="default" [routerLink]="['/menu/menu/finca/crearfinca']" style="float: right;">
+                <ion-icon color="secondary" name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <!-- Searchbar with a placeholder -->
+    <ion-content class=" background ">
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+            </ion-refresher-content>
+        </ion-refresher>
+
+        <div class="contenido ">
+            Fincas
+        </div>
+        <ion-card *ngFor="let f of fincas; let i=index ">
+            <ion-item class="ion-activated ">
+                <ion-col size="2 ">
+                    <ion-button color="default " (click)="editar(f.fin_id) ">
+                        <ion-icon color="secondary " name="create-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button color="default " (click)="eliminar(f.fin_id)">
+                        <ion-icon color="secondary " name="trash-bin-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+
+                    <a class="boton_1 " (click)="lotes(f.fin_id)">
+                        Ver lotes
+                    </a>
+                </ion-col>
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>
+                    Identificador
+                    <div class="contenido2 ">{{f.fin_id}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Nombre
+                    <div class="contenido2 ">{{f.fin_nombre}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Area
+                    <div class="contenido2 ">{{f.fin_area}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Descripcion
+                    <div class="contenido2 ">{{f.fin_descripcion}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Administrador
+                    <div class="contenido2 ">{{f.adm_nombre}}</div>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+        <br>
+        <br>
+        <br>
+
+
+    </ion-content>

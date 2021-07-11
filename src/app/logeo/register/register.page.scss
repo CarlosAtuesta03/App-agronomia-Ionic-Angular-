@@ -1,0 +1,89 @@
+.icon {
+    max-width: 32vh;
+    display: block;
+    margin: 0 auto;
+}
+
+ion-input,
+ion-item {
+    --background: transparent;
+    //--background: #84dfa8f1;
+}
+
+ion-content {
+    //   --background: aliceblue;
+    --background: #84dfa8f1;
+}
+
+.text-danger {
+    color: #cf3c4f;
+}
+
+.google {
+    --background: #DB4437;
+}
+
+.facebook {
+    //--background: #4267B2;
+    --background: #020599;
+}
+
+.padre {
+    display: flex;
+    justify-content: center;
+}
+
+.hijo {
+    padding: 1px;
+    margin: 1px;
+    //  background-color: yellow;
+}
+
+h1 {
+    text-align: center;
+    font-size: 200%;
+    // font-weight: bold;
+    font-family: italic;
+    color: rgb(252, 252, 252);
+}
+
+.boton {
+    --background: #008f39;
+}
+
+.header {
+    --background: #3da868;
+}
+
+//reactivos
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+}
+
+#container a {
+    text-decoration: none;
+}
+
+.icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

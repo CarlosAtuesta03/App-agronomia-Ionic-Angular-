@@ -1,0 +1,62 @@
+<ion-header>
+
+    <ion-toolbar class="header">
+
+        <ion-title class="ion-text-center">
+            <h1>Registrar usuario</h1>
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content class="ion-padding">
+    <img class="icon" src="assets/icon/user2.png" alt="">
+    <br>
+
+    <form [formGroup]="login" (ngSubmit)="salvarFormulario()">
+
+        <ion-item>
+            <ion-label position="floating"> Email </ion-label>
+            <ion-input formControlName="direccion" type="text" name="direccion" #email required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)">
+            <ion-label text-wrap color="danger" *ngIf="direccion.errors.pattern">
+                No es un formato de direccion de correo valido
+            </ion-label>
+            <ion-label text-wrap color="danger" *ngIf="direccion.errors.required">
+                El campo debe ser diligenciado
+            </ion-label>
+        </ion-item>
+
+        <ion-item lines="full">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="codigo" type="password" name="codigo" #password required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)">
+            <ion-label text-wrap color="danger" *ngIf="codigo.errors.required">
+                El campo debe ser diligenciado
+            </ion-label>
+
+            <ion-label text-wrap color="danger" *ngIf="codigo.errors.minlength">
+                No cumple con la cantidad minima de caracteres
+            </ion-label>
+        </ion-item>
+
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="onRegister(email, password)" expand="block">Registrar</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
+
+    <ion-row>
+        <ion-col>
+            <p class="ion-text-end">
+                <a routerLink="/login">¿Ya tienes una cuenta?</a>
+            </p>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

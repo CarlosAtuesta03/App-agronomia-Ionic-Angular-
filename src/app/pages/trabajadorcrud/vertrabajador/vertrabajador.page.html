@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro"></ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-content class="background">
+
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+            </ion-refresher-content>
+        </ion-refresher>
+        <div class="contenido">
+            Trabajador
+        </div>
+        <ion-card *ngFor="let t of trabajadores; let i=index">
+            <ion-item class="ion-activated">
+                <ion-col size="2">
+                    <ion-button color="default" (click)="editar(t.tra_cedula)">
+                        <ion-icon color="secondary" name="create-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button color="default" (click)="eliminar(t.tra_cedula)">
+                        <ion-icon color="secondary" name="trash-bin-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <!--    <ion-col>
+
+                    <a class="boton_1" (click)="lotes(f.fin_id)">
+                      Ver lotes
+                  </a>
+                </ion-col>-->
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>
+                    Cedula
+                    <div class="contenido2">{{t.tra_cedula }}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated">
+                <ion-label>Nombre
+                    <div class="contenido2">{{t.tra_nombre }}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Telefono
+                    <div class="contenido2">{{t.tra_telefono }}</div>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+        <br>
+        <br>
+        <a class="izquierdo" [routerLink]="['/menu/menu/trabajadores']">
+            Regresar
+        </a>
+        <br>
+        <br>
+
+
+    </ion-content>

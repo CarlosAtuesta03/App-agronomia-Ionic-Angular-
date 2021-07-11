@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro">Crear Trabajador</ion-title>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+    <br>
+    <ion-card>
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" #tra_nombre required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Telefono</ion-label>
+                <ion-input type="text" #tra_telefono required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Foto</ion-label>
+                <ion-input type="text" #tra_foto required></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(tra_nombre,tra_telefono,tra_foto)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-back-button defaultHref="/menu/menu/trabajadores" text="Regresar" lot="start" mode="ios" color="⚠" class="izquierdo"></ion-back-button>
+
+</ion-content>

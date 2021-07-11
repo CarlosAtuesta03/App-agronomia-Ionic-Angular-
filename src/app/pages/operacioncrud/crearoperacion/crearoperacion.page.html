@@ -1,0 +1,65 @@
+<ion-header>
+    <div class="contenido">
+        Crear operacion
+    </div>
+</ion-header>
+
+<ion-content class="background">
+    <br>
+    <ion-card>
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" #ope_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Tiempo</ion-label>
+                <ion-input type="text" #ope_tiempo required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fecha</ion-label>
+                <ion-input type="text" #ope_fecha required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fin</ion-label>
+                <ion-input type="text" #ope_fin required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Cultivo al que pertenece</ion-label>
+                <ion-input type="text" #ope_cul_id required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="agregar(ope_nombre,ope_tiempo,ope_fecha,ope_fin,ope_cul_id)" expand="block">
+                    Agregar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="closeModal()">
+                Regresar
+            </a>
+            </ion-col>
+        </ion-row>
+
+    </ion-card>
+</ion-content>

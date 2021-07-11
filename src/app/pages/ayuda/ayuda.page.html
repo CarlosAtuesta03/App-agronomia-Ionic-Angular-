@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro">Ayuda</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-content class="background">
+
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+            </ion-refresher-content>
+        </ion-refresher>
+
+        <ion-card>
+
+            <ion-card-header>
+
+                <ion-card-title class="centro">¿En que consiste? </ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                Es una plataforma multifacética diseñada para satisfacer las necesidades de los campesinos, agricultores, ingenieros agrícolas, ingenieros agroindustriales entre otros. Podrán encontrar productos especializados para realizar las actividades agrícolas,
+                técnicas en la materia y mantener relaciones con proveedores si lo desea y demás información a la que podrás acceder.
+            </ion-card-content>
+        </ion-card>
+        <div class="action-button">
+            <div class="hijo">
+                <ion-button class="boton" [routerLink]="['/login']">
+                    <ion-icon side="start" name="log-out-outline"></ion-icon>
+                    Cerrar sesión
+                </ion-button>
+            </div>
+        </div>
+
+    </ion-content>

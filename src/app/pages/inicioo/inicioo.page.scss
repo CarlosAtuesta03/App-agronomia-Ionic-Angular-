@@ -1,0 +1,73 @@
+ion-content {
+    //   --background: aliceblue;
+    --background: #f6f8f7f1;
+}
+
+//fondo
+ion-content.background {
+    --background: url(https://im.vsco.co/aws-us-west-2/c5161d/95659654/5f39e4d5ca8cde51652e29b3/5f39e4d5ca8cde51652e29b3.jpg?w=480) 0 0/100% 100% no-repeat;
+    //  --background: url(https://im.vsco.co/aws-us-west-2/c5161d/95659654/5f39e4d5ca8cde51652e29b3/5f39e4d5ca8cde51652e29b3.jpg?w=480) 0 0/100% 100% no-repeat;
+}
+
+h1 {
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: Serif;
+    // color: rgb(255, 255, 255);
+    color: rgb(7, 0, 0);
+}
+
+h4 {
+    text-align: center;
+    font-size: 250%;
+    font-weight: bold;
+    font-family: Serif;
+    color: rgb(22, 19, 19);
+}
+
+h2 {
+    font: monospace;
+    text-align: center;
+    font-size: 200%;
+}
+
+h3 {
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    font-family: Serif;
+    color: rgb(255, 255, 255);
+}
+
+h6 {
+    font-size: 100%; //250
+    font-weight: bold;
+    font-family: Serif;
+    color: rgb(255, 255, 255);
+}
+
+.padre {
+    display: flex;
+    align-items: center;
+}
+
+.hijo {
+    line-height: 600px; //Damos 200px de alto para notar el efecto
+}
+
+h5 {
+    font-size: 250%; //250
+    font-weight: bold;
+    font-family: Serif;
+}
+
+
+/*
+ion-title {
+    text-align: center;
+    font-size: 200%;
+    // font-weight: bold;
+    font-family: italic;
+    color: rgb(10, 1, 1);
+}*/

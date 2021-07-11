@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro"></ion-title>
+        </ion-buttons>
+        <ion-col>
+            <ion-button color="default" (click)="presentModal()" style="float: right;">
+                <ion-icon color="secondary" name="duplicate-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-content class="background">
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+            </ion-refresher-content>
+        </ion-refresher>
+
+        <div class="contenido">
+            Lotes
+        </div>
+        <ion-card *ngFor="let l of lotess; let i=index">
+            <ion-item class="ion-activated">
+                <ion-col size="2">
+                    <ion-button color="default" (click)="editar(l.lot_id)">
+                        <ion-icon color="secondary" name="create-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button color="default" (click)="eliminar(l.lot_id )">
+                        <ion-icon color="secondary" name="trash-bin-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+
+                    <a class="boton_1" (click)="cultivos(l.lot_id)">
+                      Ver cultivos
+                  </a>
+                </ion-col>
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label>
+                    Identificador
+                    <div class=" contenido2 ">{{l.lot_id}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Area
+                    <div class="contenido2 ">{{l.lot_area}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Descripcion
+                    <div class="contenido2 ">{{l.lot_descripcion}}</div>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Finca
+                    <div class="contenido2 ">{{l.lot_fin_id}}</div>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+        <br>
+        <a class="izquierdo" [routerLink]="['/menu/menu/finca']">
+            Regresar a fincas
+        </a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </ion-content>

@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Editar Cultivo
+    </div>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <ion-card *ngFor="let c of cultivos">
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nombre</ion-label>
+                <ion-input type="text" [value]="c.cul_nombre" #cul_nombre required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Inicio</ion-label>
+                <ion-input type="text" [value]="c.cul_inicio" #cul_inicio required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Fin</ion-label>
+                <ion-input type="text" [value]="c.cul_fin" #cul_fin required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Cantidad</ion-label>
+                <ion-input type="text" [value]="c.cul_cantidad" #cul_cantidad clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Lote al que pertenece</ion-label>
+                <ion-input type="text" [value]="c.cul_lot_id" #cul_lot_id clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Tipo del cultivo</ion-label>
+                <ion-input type="text" [value]="c.cul_tip_id" #cul_tip_id clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="Editar( cul_nombre,cul_inicio,cul_fin,cul_cantidad,cul_lot_id,cul_tip_id)" expand="block">
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+
+        <ion-row>
+            <ion-col>
+                <a class="izquierdo" type="submit" (click)="regresar(c.cul_lot_id)">
+                Regresar
+            </a>
+            </ion-col>
+        </ion-row>
+        <br>
+
+    </ion-card>
+</ion-content>

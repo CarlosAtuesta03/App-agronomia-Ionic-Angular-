@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+    <ion-toolbar fill="outline">
+        <ion-buttons slot="start">
+            <ion-menu-button color="success"></ion-menu-button>
+            <ion-title class="centro">Gastos</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class=" background ">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+
+
+    <ion-grid>
+        <ion-card>
+            <ion-row class="contenido4">
+                <ion-col size="1">
+                    <div>
+                        Id
+                    </div>
+                </ion-col>
+                <ion-col size="3">
+                    <div>
+                        Nombre
+                    </div>
+                </ion-col>
+                <ion-col size="3">
+                    <div>
+                        Gastos
+                    </div>
+                </ion-col>
+                <ion-col size="3">
+                    <div>
+                        Tipo cultivo
+                    </div>
+                </ion-col>
+
+            </ion-row>
+        </ion-card>
+    </ion-grid>
+
+    <ion-grid *ngFor="let c of cultivoss">
+        <ion-card>
+            <ion-row>
+                <ion-col size="1">{{c.cul_id}}</ion-col>
+                <ion-col size="3">{{c.cul_nombre}}</ion-col>
+                <ion-col size="3">{{c.cul_gasto}}</ion-col>
+                <ion-col size="3">{{c.tip_nombre}}</ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-grid>
+    <br>
+    <div class="contenido3">
+        Generar PDF
+    </div>
+    <ion-card>
+        <form (ngSubmit)="crearMiPdf()" [formGroup]="myForm">
+            <ion-item>
+                <ion-label>Incluir logo imagen</ion-label>
+                <ion-checkbox formControlName="showLogo" slot="start"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Elaborado</ion-label>
+                <ion-input formControlName="remite"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Destinatario</ion-label>
+                <ion-input formControlName="to"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Descripcion</ion-label>
+                <ion-textarea formControlName="text" rows="3"></ion-textarea>
+            </ion-item>
+            <ion-button expand="full" (click)="crearMiPdf()">Crear Pdf</ion-button>
+        </form>
+        <img [src]="fotoPdf" *ngIf="fotoPdf">
+        <ion-button expand="full" (click)="downloadPdf()" color="secondary" [disabled]="!pdfObj">Guardar Pdf</ion-button>
+    </ion-card>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+    <div class="contenido">
+        Editar proveedor
+    </div>
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
+        </ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <ion-card *ngFor="let p of proveedor">
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Nit</ion-label>
+                <ion-input type="text" [value]="p.pro_nit" #pro_nit required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Razón social</ion-label>
+                <ion-input type="text" [value]="p.pro_razonsocial" #pro_razonsocial required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label color="medium" position="floating">Email</ion-label>
+                <ion-input type="text" [value]="p.pro_email" #pro_email required clearInput></ion-input>
+            </ion-item>
+        </ion-card>
+        <br>
+        <ion-row>
+            <ion-col>
+                <ion-button class="boton" type="submit" (click)="Editar( pro_nit,pro_razonsocial,pro_email)" expand="block">
+                    Guardar
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ion-row>
+
+            <a class="izquierdo" [routerLink]="['/menu/menu/proveedor']">
+              Regresar
+          </a>
+
+        </ion-row>
+    </ion-card>
+</ion-content>
