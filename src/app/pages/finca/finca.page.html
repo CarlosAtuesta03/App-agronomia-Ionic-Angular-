@@ -9,17 +9,22 @@
                 <ion-icon color="secondary" name="duplicate-outline"></ion-icon>
             </ion-button>
         </ion-col>
+
     </ion-toolbar>
+    <ion-searchbar color="defaul" placeholder="Nombre de la finca" (ionChange)="buscar($event)"></ion-searchbar>
 </ion-header>
 
 
 <ion-content>
+
     <!-- Searchbar with a placeholder -->
     <ion-content class=" background ">
         <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
             <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="">
             </ion-refresher-content>
         </ion-refresher>
+
+        <!-- <ion-searchbar color="danger" placeholder="Nombre de la finca" (ionChange)="buscar($event)"></ion-searchbar>-->
 
         <div class="contenido ">
             Fincas

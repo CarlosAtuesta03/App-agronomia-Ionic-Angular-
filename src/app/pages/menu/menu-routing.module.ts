@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../lote/lote.module').then(m => m.LotePageModule)
       },
       {
+        path: 'finca/buscarfinca/:text',
+        loadChildren: () => import('../buscar/buscarfinca/buscarfinca.module').then(m => m.BuscarfincaPageModule)
+      },
+      {
         path: 'finca/lote/crearlote',
         loadChildren: () => import('../lotecrud/crearlote/crearlote.module').then(m => m.CrearlotePageModule)
       },

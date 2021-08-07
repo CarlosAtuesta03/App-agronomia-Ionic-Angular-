@@ -139,6 +139,14 @@ const routes: Routes = [
     path: 'juego',
     loadChildren: () => import('./pages/juego/juego.module').then( m => m.JuegoPageModule)
   },
+  {
+    path: 'buscarfinca',
+    loadChildren: () => import('./pages/buscar/buscarfinca/buscarfinca.module').then( m => m.BuscarfincaPageModule)
+  },
+  {
+    path: 'buscarlote',
+    loadChildren: () => import('./pages/buscar/buscarlote/buscarlote.module').then( m => m.BuscarlotePageModule)
+  },
   
  
 

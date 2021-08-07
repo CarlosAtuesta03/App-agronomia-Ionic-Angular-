@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Buscaste {{text}}</ion-title>
+        <ion-back-button defaultHref="home" slot="start"></ion-back-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div>
+        <ion-card class="bazul" *ngFor="let f of productsArr">
+
+            <ion-item>
+
+                <ion-label>
+                    Identificador
+                    <div class="contenido2 ">{{f.fin_id}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Nombre
+                    <div class="contenido2 ">{{f.fin_nombre}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Area
+                    <div class="contenido2 ">{{f.fin_area}}</div>
+                </ion-label>
+            </ion-item>
+
+            <ion-item class="ion-activated ">
+                <ion-label>Descripcion
+                    <div class="contenido2 ">{{f.fin_descripcion}}</div>
+                </ion-label>
+            </ion-item>
+        </ion-card>
+    </div>
+</ion-content>

@@ -52,4 +52,8 @@ buscar2( event){
   this.router.navigate(['/menu/menu/finca/buscarfinca', event.detail.value]);
 }
 
+buscar (event){
+  this.router.navigate(['/menu/menu/finca/buscarfinca', event.detail.value]);
+}
+
 }
