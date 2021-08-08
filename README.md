@@ -2,7 +2,7 @@
 
 ## Requerido:
 ```
-Apirest, se encuentra en: https://github.com/CarlosAtuesta03/Api-rest-agronomia 
+Apirest, se encuentra en: https://github.com/CarlosAtuesta03/Api-rest-agronomi 
 ```
 ```
 Instalar Ionic, npm install -g ionic 
